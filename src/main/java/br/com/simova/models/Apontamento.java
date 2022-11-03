@@ -92,7 +92,7 @@ public class Apontamento implements Relatorio {
             else
                 System.out.println("Resta " + atividade.getEtapas() + " etapa para concluir a Atividade " + atividade.getNome());
         } else
-            System.out.println("Atividade " + atividade.getNome() + " concluída com sucesso.");
+            System.out.println("O Apontamento " + getCodigo() + " teve a Atividade " + atividade.getNome() + " concluída com sucesso.");
     }
 
     @Override

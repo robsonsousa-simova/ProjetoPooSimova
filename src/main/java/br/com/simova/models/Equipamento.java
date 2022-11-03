@@ -11,12 +11,12 @@ public class Equipamento {
     public Equipamento() {
     }
 
-    public Equipamento(String codigo, String nome, String fabricante, String modelo, int horasManutencao) {
+    public Equipamento(String codigo, String nome, String fabricante, String modelo) {
         this.codigo = codigo;
         this.nome = nome;
         this.fabricante = fabricante;
         this.modelo = modelo;
-        this.horasManutencao = horasManutencao;
+        this.horasManutencao = 0;
     }
 
     public String getCodigo() {
@@ -59,19 +59,29 @@ public class Equipamento {
         this.horasManutencao = horasManutencao;
     }
 
+    public void incrementarHorasUsoEquipamento(int horasManutencao) {
+
+        this.horasManutencao = horasManutencao + 1;
+    }
+
     @Override
     public String toString() {
-        return "Codigo: " + codigo
-                + "\tNome: " + nome
-                + "\tFabricante: " + fabricante
-                + "\tModelo: " + modelo
-                + "\tHorasManutencao: " + horasManutencao;
+        return "|\tCodigo: " + codigo
+                + "\t|\tNome: " + nome
+                + "\t|\tFabricante: " + fabricante
+                + "\t|\tModelo: " + modelo
+                + "\t|\tHoras Manutencao: " + getHorasManutencao();
     }
 
     public void exibirEquipamento() {
 
-        String equipamento = toString();
+        String equipamento = getClassName() + "\t" + this;
 
         System.out.println(equipamento);
+    }
+
+    public String getClassName() {
+
+        return "ClassName: " + this.getClass().getSimpleName();
     }
 }

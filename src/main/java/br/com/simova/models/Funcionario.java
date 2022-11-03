@@ -31,13 +31,18 @@ public class Funcionario extends Pessoa {
 
     @Override
     public String toString() {
-        return "Cracha: " + cracha + "\tFunção: " + funcao;
+        return "|\tCracha: " + cracha + "\t|\tFunção: " + funcao;
     }
 
     public void exibirFuncionario() {
 
-        String funcionario = toString();
+        String funcionario = getClassName() + "\t" + this + "\t|\tNome: " + getNome() + "\t|\tSexo: " + getSexo();
 
-        System.out.println("Nome: " + getNome() + "\tSexo: " + getSexo() + "\t" + funcionario);
+        System.out.println(funcionario);
+    }
+
+    public String getClassName() {
+
+        return "ClassName: " + this.getClass().getSimpleName();
     }
 }

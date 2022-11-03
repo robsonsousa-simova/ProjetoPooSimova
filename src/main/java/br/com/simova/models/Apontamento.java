@@ -1,6 +1,5 @@
 package br.com.simova.models;
 
-import java.time.format.DateTimeFormatter;
 import java.util.Date;
 
 public class Apontamento implements Relatorio {
@@ -26,6 +25,18 @@ public class Apontamento implements Relatorio {
     @Override
     public void usarEquipamento() {
 
+        // equipamento.incrementarHorasUsoEquipamento();
+        this.equipamento.incrementarHorasUsoEquipamento(equipamento.getHorasManutencao());
+        // this.equipamento.setHorasManutencao(equipamento.getHorasManutencao());
+
+        if (equipamento.getHorasManutencao() >= 20) {
+
+            System.out.println("O equipamento " + equipamento.getNome()
+                    + " foi utilizado por " + equipamento.getHorasManutencao()
+                    + " horas" + " e deve ser colocado em manutenção.");
+        } else {
+            System.out.println("Dolly diz: continue a usar, continue a usar...");
+        }
     }
 
     @Override
@@ -35,17 +46,22 @@ public class Apontamento implements Relatorio {
 
     @Override
     public String toString() {
-        return "Codigo: " + codigo
-                + "\tData: " + dataApt
-                + "\tEquipamento: " + equipamento.getNome()
-                + "\tAtividade: " + atividade.getNome()
-                + "\tFuncionário: " + funcionario.getNome();
+        return "|\tCodigo: " + codigo
+                + "\t|\tData: " + dataApt
+                + "\t|\tEquipamento: " + equipamento.getNome()
+                + "\t|\tAtividade: " + atividade.getNome()
+                + "\t|\tFuncionário: " + funcionario.getNome();
     }
 
-    public void exibirApontamento(){
+    public void exibirApontamento() {
 
-        String apontamento = toString();
+        String apontamento = getClassName() + "\t" + this;
 
         System.out.println(apontamento);
+    }
+
+    public String getClassName() {
+
+        return "ClassName: " + this.getClass().getSimpleName();
     }
 }

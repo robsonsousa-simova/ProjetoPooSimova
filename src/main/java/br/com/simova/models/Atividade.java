@@ -51,13 +51,18 @@ public class Atividade {
 
     @Override
     public String toString() {
-        return "Código: " + codigo + "\tNome: " + nome + "\tGrupo: " + grupo + "\tEtapas: " + etapas;
+        return "|\tCódigo: " + codigo + "\t|\tNome: " + nome + "\t|\tGrupo: " + grupo + "\t|\tEtapas: " + etapas;
     }
 
     public void exibirAtividade() {
 
-        String atividade = toString();
+        String atividade = getClassName() + "\t" + this;
 
         System.out.println(atividade);
+    }
+
+    public String getClassName() {
+
+        return "ClassName: " + this.getClass().getSimpleName();
     }
 }

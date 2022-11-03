@@ -49,6 +49,10 @@ public class Atividade {
         this.etapas = etapas;
     }
 
+    public void decrementarEtapas(int etapas){
+        this.etapas = etapas - 1;
+    }
+
     @Override
     public String toString() {
         return "|\tCódigo: " + codigo + "\t|\tNome: " + nome + "\t|\tGrupo: " + grupo + "\t|\tEtapas: " + etapas;

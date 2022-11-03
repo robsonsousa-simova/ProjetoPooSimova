@@ -16,19 +16,16 @@ public class MainApplication {
 
         Funcionario f1 = new Funcionario("Robson", "Masculino", "A0142", "Programador");
         Equipamento e1 = new Equipamento("T01", "Trator 1", "Volkswagen", "VW 1");
-        Atividade a1 = new Atividade("A0001", "Atividade 1", "Grupo 1", 2);
+        Atividade a1 = new Atividade("A0001", "Desafio POO Simova", "Grupo 1", 5);
         Apontamento ap1 = new Apontamento("AP0001", new Date(), e1, a1, f1);
+
+        ap1.exibirApontamento();
+        exibirLinhaPontilhada();
 
         f1.exibirFuncionario();
         exibirLinhaPontilhada();
 
         e1.exibirEquipamento();
-        exibirLinhaPontilhada();
-
-        a1.exibirAtividade();
-        exibirLinhaPontilhada();
-
-        ap1.exibirApontamento();
         exibirLinhaPontilhada();
 
         for (int hora = 1; hora <= 20; hora++) {
@@ -37,18 +34,26 @@ public class MainApplication {
 
         exibirLinhaPontilhada();
         e1.exibirEquipamento();
+        exibirLinhaPontilhada();
+
+        a1.exibirAtividade();
+        exibirLinhaPontilhada();
+
+        for (int i = 0; i < 5; i++)
+            ap1.avancarAtividade();
+        a1.exibirAtividade();
     }
 
 
     public static void exibirLinhaPontilhada() {
 
-        System.out.println("-------------------------------------------------------------------------------------------------------------------------------------------------------------------");
+        System.out.println("--------------------------------------------------------------------------------------------------------------------------------------------------------------------------");
     }
 
     public static void exibirDuplaLinhaPontilhada() {
 
-        System.out.println("===================================================================================================================================================================");
-        System.out.println("===================================================================================================================================================================");
+        System.out.println("==========================================================================================================================================================================");
+        System.out.println("==========================================================================================================================================================================");
     }
 
     public static void projetoNome() {

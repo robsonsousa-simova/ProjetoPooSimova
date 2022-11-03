@@ -29,19 +29,31 @@ public class Apontamento implements Relatorio {
         this.equipamento.incrementarHorasUsoEquipamento(equipamento.getHorasManutencao());
         // this.equipamento.setHorasManutencao(equipamento.getHorasManutencao());
 
-        if (equipamento.getHorasManutencao() >= 20) {
+        if (equipamento.getHorasManutencao() >= 20)
 
             System.out.println("O equipamento " + equipamento.getNome()
-                    + " foi utilizado por " + equipamento.getHorasManutencao()
-                    + " horas" + " e deve ser colocado em manutenção.");
-        } else {
+                    + " foi utilizado por " + equipamento.getHorasManutencao() + " horas" + " e deve ser colocado em manutenção.");
+        else
             System.out.println("Dolly diz: continue a usar, continue a usar...");
-        }
     }
 
     @Override
     public void avancarAtividade() {
 
+        this.atividade.decrementarEtapas(atividade.getEtapas());
+
+
+        if (atividade.getEtapas() > 0){
+
+            if (atividade.getEtapas() > 1)
+                System.out.println("Restam " + atividade.getEtapas() + " etapas para concluir a Atividade " + atividade.getNome());
+            else
+                System.out.println("Resta " + atividade.getEtapas() + " etapa para concluir a Atividade " + atividade.getNome());
+        }
+
+
+        else
+            System.out.println("Atividade " + atividade.getNome() + " concluída com sucesso.");
     }
 
     @Override

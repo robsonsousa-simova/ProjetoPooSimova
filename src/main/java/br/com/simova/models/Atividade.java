@@ -53,4 +53,11 @@ public class Atividade {
     public String toString() {
         return "Código: " + codigo + "\tNome: " + nome + "\tGrupo: " + grupo + "\tEtapas: " + etapas;
     }
+
+    public void exibirAtividade() {
+
+        String atividade = toString();
+
+        System.out.println(atividade);
+    }
 }

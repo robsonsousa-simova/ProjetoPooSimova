@@ -65,6 +65,13 @@ public class Equipamento {
                 + "\tNome: " + nome
                 + "\tFabricante: " + fabricante
                 + "\tModelo: " + modelo
-                + "\tHorasManutencao=" + horasManutencao;
+                + "\tHorasManutencao: " + horasManutencao;
+    }
+
+    public void exibirEquipamento() {
+
+        String equipamento = toString();
+
+        System.out.println(equipamento);
     }
 }

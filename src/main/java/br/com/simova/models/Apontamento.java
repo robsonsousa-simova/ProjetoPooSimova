@@ -1,11 +1,12 @@
 package br.com.simova.models;
 
 import java.time.format.DateTimeFormatter;
+import java.util.Date;
 
 public class Apontamento implements Relatorio {
 
     private String codigo;
-    private DateTimeFormatter dataApt;
+    private Date dataApt;
     private Equipamento equipamento;
     private Atividade atividade;
     private Funcionario funcionario;
@@ -13,7 +14,7 @@ public class Apontamento implements Relatorio {
     public Apontamento() {
     }
 
-    public Apontamento(String codigo, DateTimeFormatter dataApt,
+    public Apontamento(String codigo, Date dataApt,
                        Equipamento equipamento, Atividade atividade, Funcionario funcionario) {
         this.codigo = codigo;
         this.dataApt = dataApt;
@@ -36,8 +37,15 @@ public class Apontamento implements Relatorio {
     public String toString() {
         return "Codigo: " + codigo
                 + "\tData: " + dataApt
-                + "\tEquipamento: " + equipamento
-                + "\tAtividade: " + atividade
-                + "\tFuncionário: " + funcionario;
+                + "\tEquipamento: " + equipamento.getNome()
+                + "\tAtividade: " + atividade.getNome()
+                + "\tFuncionário: " + funcionario.getNome();
+    }
+
+    public void exibirApontamento(){
+
+        String apontamento = toString();
+
+        System.out.println(apontamento);
     }
 }

@@ -5,10 +5,10 @@ public class Funcionario extends Pessoa {
     private String cracha;
     private String funcao;
 
-    public Funcionario() {
-    }
 
-    public Funcionario(String cracha, String funcao) {
+    public Funcionario(String nome, String sexo, String cracha, String funcao) {
+        this.setNome(nome);
+        this.setSexo(sexo);
         this.cracha = cracha;
         this.funcao = funcao;
     }
@@ -32,5 +32,12 @@ public class Funcionario extends Pessoa {
     @Override
     public String toString() {
         return "Cracha: " + cracha + "\tFunção: " + funcao;
+    }
+
+    public void exibirFuncionario() {
+
+        String funcionario = toString();
+
+        System.out.println("Nome: " + getNome() + "\tSexo: " + getSexo() + "\t" + funcionario);
     }
 }

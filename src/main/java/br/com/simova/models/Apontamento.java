@@ -1,5 +1,6 @@
 package br.com.simova.models;
 
+import java.text.SimpleDateFormat;
 import java.util.Date;
 
 public class Apontamento implements Relatorio {
@@ -19,6 +20,47 @@ public class Apontamento implements Relatorio {
         this.dataApt = dataApt;
         this.equipamento = equipamento;
         this.atividade = atividade;
+        this.funcionario = funcionario;
+    }
+
+    public String getCodigo() {
+        return codigo;
+    }
+
+    public void setCodigo(String codigo) {
+        this.codigo = codigo;
+    }
+
+    public Date getDataApt() {
+
+        return dataApt;
+    }
+
+    public void setDataApt(Date dataApt) {
+        this.dataApt = dataApt;
+    }
+
+    public Equipamento getEquipamento() {
+        return equipamento;
+    }
+
+    public void setEquipamento(Equipamento equipamento) {
+        this.equipamento = equipamento;
+    }
+
+    public Atividade getAtividade() {
+        return atividade;
+    }
+
+    public void setAtividade(Atividade atividade) {
+        this.atividade = atividade;
+    }
+
+    public Funcionario getFuncionario() {
+        return funcionario;
+    }
+
+    public void setFuncionario(Funcionario funcionario) {
         this.funcionario = funcionario;
     }
 
@@ -43,23 +85,23 @@ public class Apontamento implements Relatorio {
         this.atividade.decrementarEtapas(atividade.getEtapas());
 
 
-        if (atividade.getEtapas() > 0){
+        if (atividade.getEtapas() > 0) {
 
             if (atividade.getEtapas() > 1)
                 System.out.println("Restam " + atividade.getEtapas() + " etapas para concluir a Atividade " + atividade.getNome());
             else
                 System.out.println("Resta " + atividade.getEtapas() + " etapa para concluir a Atividade " + atividade.getNome());
-        }
-
-
-        else
+        } else
             System.out.println("Atividade " + atividade.getNome() + " concluída com sucesso.");
     }
 
     @Override
     public String toString() {
+
+        String pattern = "yyyy-dd-MM";
+        SimpleDateFormat sdf = new SimpleDateFormat(pattern);
         return "|\tCodigo: " + codigo
-                + "\t|\tData: " + dataApt
+                + "\t|\tData: " + sdf.format(dataApt)
                 + "\t|\tEquipamento: " + equipamento.getNome()
                 + "\t|\tAtividade: " + atividade.getNome()
                 + "\t|\tFuncionário: " + funcionario.getNome();

@@ -73,7 +73,7 @@ public class Apontamento implements Relatorio {
 
         if (equipamento.getHorasManutencao() >= 20)
 
-            System.out.println("O equipamento " + equipamento.getNome()
+            System.out.println("O equipamento " + equipamento.getNome() + " apresentado no Apontamento " + getCodigo()
                     + " foi utilizado por " + equipamento.getHorasManutencao() + " horas" + " e deve ser colocado em manutenção.");
         else
             System.out.println("Dolly diz: continue a usar, continue a usar...");

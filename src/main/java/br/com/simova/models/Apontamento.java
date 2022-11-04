@@ -76,7 +76,7 @@ public class Apontamento implements Relatorio {
             System.out.println("O equipamento " + equipamento.getNome() + " apresentado no Apontamento " + getCodigo()
                     + " foi utilizado por " + equipamento.getHorasManutencao() + " horas" + " e deve ser colocado em manutenção.");
         else
-            System.out.println("Dolly diz: continue a usar, continue a usar...");
+            System.out.println("Dory diz: continue a usar, continue a usar...");
     }
 
     @Override
